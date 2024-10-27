@@ -1,4 +1,5 @@
 
+import Header from "@/components/Header";
 import Link from "next/link";
 
 import { FC } from "react";
@@ -6,9 +7,10 @@ import { FC } from "react";
 const Home: FC = () => {
   return (
     <>
-      <h1>Blog Duzera</h1>
+    
+      <Header />
       <p>Primeiro teste do blog</p>
-      <Link href="/blog">Blog</Link>
+      
     </>
   );
 }
