@@ -1,18 +1,17 @@
 import Link from "next/link"
 import { FC, ReactNode } from 'react';
+import Header from "./Header";
+import Home from "@/pages";
 
 interface LayoutProps {
   children: ReactNode; 
 }
 
-const Layout: FC = ({ children }) => {
+const Layout: FC = () => {
     return(
         <>
-            <nav>
-                <Link href="/">Home</Link> | <Link href="/blog">Blog</Link>
-            </nav>
-            <main>{children}</main>
-            <footer>© 2024 Meu Blog</footer>
+            <Home />
+           
         </>
     )
 }
