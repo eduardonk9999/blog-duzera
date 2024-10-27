@@ -2,10 +2,16 @@ import { HeaderContainer } from '@/styles/HeaderStyles';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import ButtonWhiteBlackComponent from './ButtonWhiteBlack/ButtonWhiteBlack';
 
-import iconSvg from "./Sun.svg"
+
 
 const Header: React.FC = () => {
+
+    
+
+
+
     return(
         <HeaderContainer>
             <h1>Edu</h1>
@@ -16,9 +22,11 @@ const Header: React.FC = () => {
               
                
             </nav>
-            <Image 
-                src={iconSvg}
-            />
+         
+
+            <ButtonWhiteBlackComponent onClick={() => console.log('Botão clicado!')} />
+                
+
         </HeaderContainer>
         
     )
