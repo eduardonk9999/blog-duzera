@@ -20,7 +20,7 @@ body {
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: #11071F;
   font-family: "Plus Jakarta Sans", sans-serif;
 
 }
@@ -35,6 +35,28 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+.container{
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+
+  nav{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      a {
+          margin-right: 20px;
+      }
+  }
+
+  h1 {
+      color: #01C721;
+  }
+}
+
 
 @media (prefers-color-scheme: dark) {
   html {

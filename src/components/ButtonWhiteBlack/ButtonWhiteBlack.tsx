@@ -10,14 +10,13 @@ import { ButtonWhiteBlack } from "./ButtonWhiteBlack.styles";
 
 interface ButtonWhiteBlackProps {
   primary?: boolean;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   onClick?: () => void;
 }
 
 const ButtonWhiteBlackComponent: React.FC<ButtonWhiteBlackProps> = ({
-  primary,
-  children,
   onClick,
+  children = null,
 }) => {
 
     const [isBlackIcon, setIsBlackIcon] = useState(true);
@@ -33,6 +32,7 @@ const ButtonWhiteBlackComponent: React.FC<ButtonWhiteBlackProps> = ({
 
     <ButtonWhiteBlack onClick={handkeClick} isBlackIcon={isBlackIcon}>
         {isBlackIcon ? <Image src={BlackIcon} alt="Black Icon" /> : <Image src={WhiteIcon} alt="White Icon" />}
+        {children}
     </ButtonWhiteBlack>
    
   );
