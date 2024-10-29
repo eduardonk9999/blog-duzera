@@ -36,7 +36,7 @@ const MainHome: React.FC = () => {
                 Estou animado em aplicar meu conhecimento em Desenvolvimento para criar soluções completas e eficientes.
                 Busco constantemente novos desafios e oportunidades para aprimorar minhas habilidades como desenvolvedor.</p>
             </article>
-      </Main>
+        </Main>
     )
 }
 

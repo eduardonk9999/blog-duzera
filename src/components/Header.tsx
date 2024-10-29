@@ -9,7 +9,7 @@ const Header: React.FC = () => {
     return(
         <HeaderContainer>
             <div className="container">
-                <h1>Duzera</h1>
+                <h1><Link href="/">Duzera</Link></h1>
                 <nav>
                     <Link href="/blog">Blog</Link>
                     <ButtonWhiteBlackComponent onClick={() => console.log('Botão clicado!')} />

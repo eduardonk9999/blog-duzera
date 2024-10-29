@@ -4,13 +4,15 @@ import Header from "./Header";
 import Home from "@/pages";
 
 interface LayoutProps {
-  children: ReactNode; 
+    children: ReactNode;
 }
 
-const Layout: FC = () => {
+
+
+const Layout: FC<LayoutProps> = ({ children }) => {
     return(
         <>
-            <Home />
+            <main>{children}</main>
            
         </>
     )
