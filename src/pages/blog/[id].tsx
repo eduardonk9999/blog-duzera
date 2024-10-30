@@ -48,7 +48,7 @@ const PostPage: React.FC = () => {
       <Content>
 
         <h1>{post.title}</h1>
-        <p dangerouslySetInnerHTML={{ __html: post.body }} />
+        <div dangerouslySetInnerHTML={{ __html: post.body }} />
       </Content>
     </>
   );

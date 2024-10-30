@@ -7,5 +7,9 @@ export const HeaderContainer = styled.header`
     padding: 10px 0;
 
    
+    @media (max-width: 1400px) {
+        padding: 10px 20px;
+      
+    }
 
 `;

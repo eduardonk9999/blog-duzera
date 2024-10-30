@@ -25,4 +25,15 @@ export const Main = styled.main`
         line-height: 45px;
     }
 
+    
+   @media (max-width: 760px) {
+        padding: 0 2rem;
+        
+       .profileNameImage {
+            flex-direction: column;
+       }
+    }
+
+    
+
 `;

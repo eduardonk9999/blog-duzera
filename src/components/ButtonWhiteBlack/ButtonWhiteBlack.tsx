@@ -9,13 +9,14 @@ import Image from "next/image";
 import { ButtonWhiteBlack } from "./ButtonWhiteBlack.styles";
 
 interface ButtonWhiteBlackProps {
-  primary?: boolean;
+  isBlackIcon?: boolean;
   children?: React.ReactNode;
   onClick?: () => void;
 }
 
 const ButtonWhiteBlackComponent: React.FC<ButtonWhiteBlackProps> = ({
   onClick,
+
   children = null,
 }) => {
 
@@ -30,7 +31,7 @@ const ButtonWhiteBlackComponent: React.FC<ButtonWhiteBlackProps> = ({
 
   return (
 
-    <ButtonWhiteBlack onClick={handkeClick} isBlackIcon={isBlackIcon}>
+    <ButtonWhiteBlack $isBlackIcon={isBlackIcon} onClick={handkeClick}>
         {isBlackIcon ? <Image src={BlackIcon} alt="Black Icon" /> : <Image src={WhiteIcon} alt="White Icon" />}
         {children}
     </ButtonWhiteBlack>

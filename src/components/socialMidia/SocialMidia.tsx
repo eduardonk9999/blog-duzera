@@ -14,10 +14,10 @@ const SocialMidia: React.FC = () => {
         <SocialMidiaStyle>
             <ul>
                 <li>
-                    <Image src={Linkedin} alt="Linkedin" />
+                    <Image src={GitHub} alt="GitHub" />
                 </li>
                 <li>
-                    <Image src={GitHub} alt="GitHub" />
+                    <Image src={Linkedin} alt="Linkedin" />
                 </li>
             </ul>
         </SocialMidiaStyle>

@@ -1,7 +1,10 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+// next.config.js
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   reactStrictMode: true,
+  compiler: {
+    styledComponents: true, // Ativa o suporte SSR para styled-components
+  },
   async headers() {
     return [
       {
@@ -9,7 +12,7 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: 'Access-Control-Allow-Origin',
-            value: '*',
+            value: '*', // Permite CORS para todos os domínios na rota /api/posts
           },
         ],
       },

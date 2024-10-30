@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const LayoutBlogListen = styled.article`
-   padding: 50px 10px 120px 10px;
-   cursor: pointer;
+    cursor: pointer;
+    max-width: 1040px;
+    margin: 3rem auto 5rem auto;
 
    h2 {
     margin-bottom: 10px;
@@ -19,6 +20,13 @@ export const LayoutBlogListen = styled.article`
 
    li {
     list-style: none;
+    margin: 1rem auto 5rem auto;
    }
+
+   
+   @media (max-width: 1200px) {
+        
+        padding: 0 5rem;
+    }
 
 `;

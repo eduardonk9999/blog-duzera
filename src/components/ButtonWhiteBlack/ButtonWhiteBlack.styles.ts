@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 interface ButtonStyledProps {
-    isBlackIcon: boolean;
+    $isBlackIcon: boolean;
 }
 
 export const ButtonWhiteBlack = styled.button<ButtonStyledProps>`
