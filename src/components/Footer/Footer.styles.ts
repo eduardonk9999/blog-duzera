@@ -8,4 +8,12 @@ export const FooterStyled = styled.footer`
         margin: 0 auto;
     }
 
+
+    svg.logoDuzera {
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+        width: 300px;
+    }
+
 `;

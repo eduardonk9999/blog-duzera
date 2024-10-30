@@ -1,7 +1,7 @@
 import React from "react";
 import BlackIcon from './Black.svg';
-import WhiteIcon from './White.svg';
-import Image from "next/image";
+import WhiteIcon from './white.svg';
+
 import { ButtonWhiteBlack } from "./ButtonWhiteBlack.styles";
 import { useTheme } from "@/contexts/ThemeContext";
 
@@ -24,9 +24,9 @@ const ButtonWhiteBlackComponent: React.FC<ButtonWhiteBlackProps> = ({
   return (
     <ButtonWhiteBlack isBlackIcon={isDarkTheme} onClick={handleClick}>
       {isDarkTheme ? (
-        <Image src={BlackIcon} alt="Black Icon" />
+        <BlackIcon className="iconWhiteBlack" />
       ) : (
-        <Image src={WhiteIcon} alt="White Icon" />
+        <WhiteIcon className="iconWhiteBlack" />
       )}
       {children}
     </ButtonWhiteBlack>

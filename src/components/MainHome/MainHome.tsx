@@ -27,7 +27,7 @@ const MainHome: React.FC = () => {
         <Main>
 
             <article className="container profileNameImage">
-                {profileImage && <Image src={profileImage} alt="Foto de Perfil do GitHub" style={{ borderRadius: "50%", width: "150px" }} />}
+                {profileImage && <Image src={profileImage} alt="Foto de Perfil do GitHub"  width={100} height={100} />}
                 <h2>Eduardo Silva - Engenheiro de Software</h2>
             </article>
 

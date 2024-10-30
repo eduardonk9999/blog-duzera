@@ -7,7 +7,7 @@ export const Main = styled.main`
         justify-content: center;
         align-items: center;
         gap: 10px;
-        margin: 100px auto;
+        margin: 100px auto 50px auto;
 
         img {
             margin-right: 10px;
@@ -15,6 +15,11 @@ export const Main = styled.main`
               0 0 30px rgba(0, 123, 255, 0.4),
               0 0 45px rgba(0, 123, 255, 0.2);
             transition: box-shadow 0.3s ease-in-out;
+
+            border-radius: 110px;
+            height: 150px;
+            width: 150px;
+            
         }
     }
 
@@ -23,7 +28,17 @@ export const Main = styled.main`
         font-size: 20px;
         margin-bottom: 0px;
         line-height: 35px;
-        padding: 1rem 12rem;
+        padding: 1rem 0rem;
+    }
+
+
+    .container_content {
+        p {
+            padding: 0 10rem;
+            line-height: 35px;
+            font-size: 20px;
+            margin-bottom: 1rem;
+        }
     }
 
 

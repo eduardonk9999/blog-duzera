@@ -1,6 +1,10 @@
-// next.config.js
+// next.config.ts
+
+import { NextConfig } from 'next';
+import { Configuration } from 'webpack';
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
   reactStrictMode: true,
   compiler: {
     styledComponents: true, // Ativa o suporte SSR para styled-components
@@ -17,6 +21,16 @@ const nextConfig = {
         ],
       },
     ];
+  },
+  images: {
+    domains: ['avatars.githubusercontent.com'], // Adicione o domínio aqui
+  },
+  webpack: (config: Configuration) => {
+    config.module?.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+    return config;
   },
 };
 
