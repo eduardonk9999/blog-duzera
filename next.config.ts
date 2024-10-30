@@ -1,7 +1,6 @@
 // next.config.ts
 
 import { NextConfig } from 'next';
-import { Configuration } from 'webpack';
 
 /** @type {import('next').NextConfig} */
 const nextConfig: NextConfig = {
@@ -25,7 +24,7 @@ const nextConfig: NextConfig = {
   images: {
     domains: ['avatars.githubusercontent.com'], // Adicione o domínio aqui
   },
-  webpack: (config: Configuration) => {
+  webpack: (config) => {
     config.module?.rules.push({
       test: /\.svg$/,
       use: ['@svgr/webpack'],
