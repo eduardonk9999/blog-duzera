@@ -1,4 +1,4 @@
-// pages/blog/[id].tsx
+
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { Content } from '@/styles/Content';
@@ -40,8 +40,8 @@ const PostPage: React.FC = () => {
     fetchPost();
   }, [id]);
 
-  if (loading) return <p>Loading...</p>;
-  if (!post) return <p>Post não encontrado.</p>;
+  if (loading) return <p style={{ textAlign: 'center' }}>Loading...</p>;
+  if (!post) return <p style={{ textAlign: 'center' }}>Post não encontrado.</p>;
 
   return (
     <>

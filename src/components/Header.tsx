@@ -14,7 +14,7 @@ const Header: React.FC = () => {
                 <SocialMidia />
                 <h1><Link href="/">Duzera</Link></h1>
                 <nav>
-                    <Link href="/itsmy">It's-A Me, Edu!</Link>
+                    <Link href="/itsmy">Its-A Me, Edu!</Link>
                     <ButtonWhiteBlackComponent onClick={() => console.log('Botão clicado!')} />
                 </nav>
             </div>

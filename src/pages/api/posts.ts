@@ -1,5 +1,6 @@
-// pages/api/posts.ts
+
 import { NextApiRequest, NextApiResponse } from 'next';
+import { Post } from '@/types/Post'
 
 const GITHUB_API_URL = 'https://api.github.com/repos/eduardonk9999/content_blog/issues';
 
@@ -18,7 +19,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const data = await response.json();
 
-    const filteredPosts = data.map((post: any) => ({
+    const filteredPosts: Post[] = data.map((post: { id: number; title: string; body: string; number: number }) => ({
       id: post.id,
       title: post.title,
       body: post.body,

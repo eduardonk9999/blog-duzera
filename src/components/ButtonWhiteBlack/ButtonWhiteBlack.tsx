@@ -1,41 +1,35 @@
-import React, { useState } from "react";
-
-
-
-
+import React from "react";
 import BlackIcon from './Black.svg';
-import WhiteIcon from './white.svg';
+import WhiteIcon from './White.svg';
 import Image from "next/image";
 import { ButtonWhiteBlack } from "./ButtonWhiteBlack.styles";
+import { useTheme } from "@/contexts/ThemeContext";
 
 interface ButtonWhiteBlackProps {
-  isBlackIcon?: boolean;
   children?: React.ReactNode;
   onClick?: () => void;
 }
 
 const ButtonWhiteBlackComponent: React.FC<ButtonWhiteBlackProps> = ({
   onClick,
-
   children = null,
 }) => {
+  const { toggleTheme, isDarkTheme } = useTheme();
 
-    const [isBlackIcon, setIsBlackIcon] = useState(true);
-
-    const handkeClick = () => {
-        setIsBlackIcon(!isBlackIcon);
-        if(onClick) onClick();
-    }
-
-
+  const handleClick = () => {
+    toggleTheme();  
+    if (onClick) onClick();
+  };
 
   return (
-
-    <ButtonWhiteBlack $isBlackIcon={isBlackIcon} onClick={handkeClick}>
-        {isBlackIcon ? <Image src={BlackIcon} alt="Black Icon" /> : <Image src={WhiteIcon} alt="White Icon" />}
-        {children}
+    <ButtonWhiteBlack isBlackIcon={isDarkTheme} onClick={handleClick}>
+      {isDarkTheme ? (
+        <Image src={BlackIcon} alt="Black Icon" />
+      ) : (
+        <Image src={WhiteIcon} alt="White Icon" />
+      )}
+      {children}
     </ButtonWhiteBlack>
-   
   );
 };
 

@@ -19,15 +19,24 @@ export const Main = styled.main`
     }
 
     p {
-        text-align: center;
-        font-size: 25px;
-        margin-bottom: 90px;
-        line-height: 45px;
+      
+        font-size: 20px;
+        margin-bottom: 0px;
+        line-height: 35px;
+        padding: 1rem 12rem;
     }
 
+
+    .container_content {
+        flex-direction: column!important;
+    }
     
    @media (max-width: 760px) {
         padding: 0 2rem;
+
+        p {
+            padding: 1rem 1rem;
+        }
         
        .profileNameImage {
             flex-direction: column;
