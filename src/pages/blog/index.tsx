@@ -31,7 +31,6 @@ const Blog: React.FC = () => {
 
     return(
         <>
-            <Header />
             <article className='container'>
                 <h1>Blog</h1>
                 <ul>
@@ -45,10 +44,6 @@ const Blog: React.FC = () => {
                     ))}
                 </ul>
             </article>
-
-            <Footer />
-
-        
         </>
     )
 }

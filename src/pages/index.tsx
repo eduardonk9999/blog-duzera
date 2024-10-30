@@ -8,13 +8,7 @@ import { FC} from "react";
 const Home: FC = () => {
   return (
     <>
-    
-      <Header />
-      
-      <MainHome />
-
-      <Footer />
-      
+      <MainHome />  
     </>
   );
 }

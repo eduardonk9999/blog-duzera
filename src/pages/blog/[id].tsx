@@ -43,10 +43,12 @@ const PostPage: React.FC = () => {
   if (!post) return <p>Post não encontrado.</p>;
 
   return (
-    <div>
-      <h1>{post.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.body }} />
-    </div>
+    <>
+      <article className='container'>
+        <h1>{post.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: post.body }} />
+      </article>
+    </>
   );
 };
 
