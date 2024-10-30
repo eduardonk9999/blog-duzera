@@ -42,6 +42,8 @@ a {
   display: flex;
   justify-content: space-between;
 
+  position: relative;
+
   nav{
       display: flex;
       align-items: center;

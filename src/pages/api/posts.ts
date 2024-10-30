@@ -5,7 +5,12 @@ const GITHUB_API_URL = 'https://api.github.com/repos/eduardonk9999/content_blog/
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
-    const response = await fetch(GITHUB_API_URL);
+    
+    const response = await fetch(GITHUB_API_URL, {
+      headers: {
+        Authorization: `token ${process.env.GITHUB_TOKEN}`, 
+      },
+    });
 
     if (!response.ok) {
       return res.status(response.status).json({ error: 'Erro ao buscar posts do GitHub.' });
