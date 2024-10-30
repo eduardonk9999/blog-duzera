@@ -4,14 +4,14 @@ import Header from "@/components/Header";
 import MainHome from "@/components/MainHome/MainHome";
 
 import { FC} from "react";
-import Blog from "./blog";
 
-const Home: FC = () => {
+
+const Itsmy: FC = () => {
   return (
     <>
-      <Blog /> 
+      <MainHome />
     </>
   );
 }
 
-export default Home;
+export default Itsmy;

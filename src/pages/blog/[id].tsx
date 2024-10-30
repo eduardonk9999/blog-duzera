@@ -1,6 +1,7 @@
 // pages/blog/[id].tsx
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import { Content } from '@/styles/Content';
 
 interface Post {
   id: number;
@@ -44,10 +45,11 @@ const PostPage: React.FC = () => {
 
   return (
     <>
-      <article className='container'>
+      <Content>
+
         <h1>{post.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.body }} />
-      </article>
+        <p dangerouslySetInnerHTML={{ __html: post.body }} />
+      </Content>
     </>
   );
 };

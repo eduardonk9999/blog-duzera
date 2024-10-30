@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer/Footer';
+import { LayoutBlogListen } from '@/styles/LayoutBlogListen';
 
 
 interface Post {
@@ -31,19 +32,18 @@ const Blog: React.FC = () => {
 
     return(
         <>
-            <article className='container'>
-                <h1>Blog</h1>
+            <LayoutBlogListen className='container'>
                 <ul>
                     {posts?.map((post) =>(
                         <li key={post.id}>
                             <Link href={`/blog/${post.number}`}>
-                                {post.title}
+                                <h2>{post.title}</h2>
                             </Link>
-                            <p>{post.body.slice(0, 100)}...</p>
+                            <p>{post.body.slice(0, 350)}... <span>ler mais</span></p>
                         </li>
                     ))}
                 </ul>
-            </article>
+            </LayoutBlogListen>
         </>
     )
 }
