@@ -1,9 +1,6 @@
-
-
-import Image from 'next/image';
 import LogoDuzera from './LogoEdu.svg';
 import { FooterStyled } from './Footer.styles';
-
+//
 
 const Footer: React.FC = () => {
 
