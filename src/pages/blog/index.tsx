@@ -21,6 +21,7 @@ const Blog: React.FC = () => {
             const response = await fetch('/api/posts');
             const data = await response.json();
             setPosts(data);
+            console.log(data);
         };
     
         fetchPosts();
