@@ -1,40 +1,30 @@
+// pages/blog/[id].tsx
 
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { Content } from '@/styles/Content';
-
-interface Post {
-  id: number;
-  title: string;
-  body: string;
-  number: number; 
-}
+import { posts } from '../api/data'; // Importando os posts do data.ts
 
 const PostPage: React.FC = () => {
-  const [post, setPost] = useState<Post | null>(null);
+  const [post, setPost] = useState<{ id: number; title: string; body: string } | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const router = useRouter();
   const { id } = router.query;
 
   useEffect(() => {
-    const fetchPost = async () => {
+    const fetchPost = () => {
       if (!id) return;
 
-      try {
-        const response = await fetch(`https://api.github.com/repos/eduardonk9999/content_blog/issues/${id}`);
-        
-      
-        if (!response.ok) {
-          throw new Error('Erro ao buscar o post');
-        }
+      const postId = parseInt(id as string, 10);
+      const foundPost = posts.find(post => post.id === postId);
 
-        const data = await response.json();
-        setPost(data);
-      } catch (error) {
-        console.error('Erro ao buscar o post:', error);
-      } finally {
-        setLoading(false);
+      if (foundPost) {
+        setPost(foundPost);
+      } else {
+        setPost(null); // Se não encontrar o post, setamos como null
       }
+
+      setLoading(false);
     };
 
     fetchPost();
@@ -46,7 +36,6 @@ const PostPage: React.FC = () => {
   return (
     <>
       <Content>
-
         <h1>{post.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.body }} />
       </Content>

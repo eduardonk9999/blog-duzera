@@ -1,28 +1,19 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { posts } from './data'; // Importando os posts do arquivo data.ts
 
-const GITHUB_API_URL = 'https://api.github.com/repos/eduardonk9999/content_blog/issues';
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
+  const { id } = req.query;
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-    const { id } = req.query;
+  if (!id) {
+    return res.status(400).json({ error: 'Id não informado.' });
+  }
 
-    if (!id) {
-        return res.status(400).json({ error: 'Id não informado.' });
-    }
+  const postId = parseInt(id as string, 10);
+  const post = posts.find((p) => p.id === postId);
 
-    try {
+  if (!post) {
+    return res.status(404).json({ error: 'Post não encontrado.' });
+  }
 
-        const response = await fetch(`${GITHUB_API_URL}/${id}`);
-        const data = await response.json();
-
-        if (data.message === 'Not Found') {
-        return res.status(404).json({ error: 'Post não encontrado.' });
-        }
-
-
-
-        res.status(200).json(data);
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: 'Erro ao buscar post.' });
-    }
+  res.status(200).json(post);
 }

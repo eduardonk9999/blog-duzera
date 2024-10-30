@@ -1,50 +1,52 @@
+// pages/blog/index.tsx
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { LayoutBlogListen } from '@/styles/LayoutBlogListen';
-
-
-interface Post {
-    id: number;
-    title: string;
-    body: string;
-    number: number; 
-  }
-
+import { Post } from '@/types/Post';
 
 const Blog: React.FC = () => {
-    const [posts, setPosts] = useState<Post[]>([]);
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const response = await fetch('/api/posts');
+        if (!response.ok) {
+          throw new Error('Erro ao buscar posts.');
+        }
+        const data = await response.json();
+        setPosts(data);
+      } catch (err) {
+        setError(err.message);
+        console.error(err);
+      }
+    };
 
-    useEffect(() => {
-        const fetchPosts = async () => {
-            const response = await fetch('/api/posts');
-            const data = await response.json();
-            setPosts(data);
-            console.log(data);
-        };
-    
-        fetchPosts();
+    fetchPosts();
+  }, []);
 
-
-    }, []);
-
-    return(
-        <>
-            <LayoutBlogListen className='container'>
-                <ul>
-                    {posts?.map((post) =>(
-                        <li key={post.id}>
-                            <Link href={`/blog/${post.number}`}>
-                                <h2>{post.title}</h2>
-                            </Link>
-                            <p>{post.body.slice(0, 150)}... <span>ler mais</span></p>
-                        </li>
-                    ))}
-                </ul>
-            </LayoutBlogListen>
-        </>
-    )
-}
+  return (
+    <>
+      <LayoutBlogListen className='container'>
+        {error ? (
+          <p>Erro: {error}</p>
+        ) : (
+          <ul>
+            {posts.map((post) => (
+              <li key={post.id}>
+                <Link href={`/blog/${post.id}`}>
+                  <h2>{post.title}</h2>
+                </Link>
+                <p>{post.body.slice(0, 150)}... <span>ler mais</span></p>
+              </li>
+            ))}
+          </ul>
+        )}
+      </LayoutBlogListen>
+    </>
+  );
+};
 
 export default Blog;
