@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { Content } from '@/styles/Content';
-import { posts } from '../api/data'; // Importando os posts do data.ts
+import { posts } from '../api/data'; 
 
 const PostPage: React.FC = () => {
   const [post, setPost] = useState<{ id: number; title: string; body: string } | null>(null);

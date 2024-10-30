@@ -1,13 +1,13 @@
-// pages/blog/index.tsx
+// Componente Blog.tsx
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { LayoutBlogListen } from '@/styles/LayoutBlogListen';
-import { Post } from '@/types/Post';
+import { Post } from '@/types/Post'; 
 
 const Blog: React.FC = () => {
   const [posts, setPosts] = useState<Post[]>([]);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null); 
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -19,7 +19,12 @@ const Blog: React.FC = () => {
         const data = await response.json();
         setPosts(data);
       } catch (err) {
-        setError(err.message);
+       
+        if (err instanceof Error) {
+          setError(err.message); 
+        } else {
+          setError('Erro desconhecido'); 
+        }
         console.error(err);
       }
     };
@@ -30,7 +35,7 @@ const Blog: React.FC = () => {
   return (
     <>
       <LayoutBlogListen className='container'>
-        {error ? (
+        {error ? ( 
           <p>Erro: {error}</p>
         ) : (
           <ul>

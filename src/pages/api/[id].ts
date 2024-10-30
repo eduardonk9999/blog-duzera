@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { posts } from './data'; // Importando os posts do arquivo data.ts
+import { posts } from './data'; 
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const { id } = req.query;
