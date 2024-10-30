@@ -56,6 +56,15 @@ export const Main = styled.main`
        .profileNameImage {
             flex-direction: column;
        }
+
+       .container_content {
+            p {
+                padding: 0 1rem;
+                line-height: 35px;
+                font-size: 20px;
+                margin-bottom: 1rem;
+            }
+        }
     }
 
     
