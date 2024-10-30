@@ -29,4 +29,9 @@ export const LayoutBlogListen = styled.article`
         padding: 0 5rem;
     }
 
+    @media (max-width: 768px) {
+        
+        padding: 5rem 2rem;
+    }
+
 `;

@@ -72,4 +72,9 @@ export const SocialMidiaStyle = styled.div`
             gap: 10px;
         }
     }
+
+    @media (max-width: 768px) {
+        top: 40px;
+        left: 70px;
+    }
 `;
