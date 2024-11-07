@@ -1,4 +1,4 @@
-# Blog Duzera
+# Blog Duzera...
 
 Um blog pessoal desenvolvido com Next.js, onde compartilho conhecimentos sobre tecnologia, desenvolvimento e outras áreas de interesse. Este projeto é uma demonstração de minhas habilidades em programação e desenvolvimento de software.
 
