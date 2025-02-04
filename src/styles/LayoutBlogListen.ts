@@ -9,7 +9,7 @@ export const LayoutBlogListen = styled.article`
     margin-bottom: 10px;
     color: #01C721;
     font-weight: 600;
-    font-size: 36px;
+    font-size: 28px;
     
    }
 
@@ -20,9 +20,10 @@ export const LayoutBlogListen = styled.article`
 
    li {
     list-style: none;
-    margin: 1rem auto 5rem auto;
+    margin: 1rem auto 2rem auto;
    }
 
+   
    
    @media (max-width: 1200px) {
         

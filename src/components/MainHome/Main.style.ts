@@ -7,7 +7,7 @@ export const Main = styled.main`
         justify-content: center;
         align-items: center;
         gap: 10px;
-        margin: 100px auto 50px auto;
+        margin: 100px 0 50px 0;
 
         img {
             margin-right: 10px;
@@ -34,8 +34,8 @@ export const Main = styled.main`
 
     .container_content {
         p {
-            padding: 0 10rem;
-            line-height: 35px;
+            padding: 0 12rem;
+            line-height: 40px;
             font-size: 20px;
             margin-bottom: 1rem;
         }

@@ -44,7 +44,7 @@ const Blog: React.FC = () => {
                 <Link href={`/blog/${post.id}`}>
                   <h2>{post.title}</h2>
                 </Link>
-                <p>{post.body.slice(0, 150)}... <span>ler mais</span></p>
+                
               </li>
             ))}
           </ul>

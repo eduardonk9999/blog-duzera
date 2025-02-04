@@ -15,6 +15,7 @@ const Header: React.FC = () => {
                 <h1><Link href="/">Duzera</Link></h1>
                 <nav>
                     <Link href="/itsmy">Its-A Me, Edu!</Link>
+                    <Link href="/">Blog</Link>
                     <ButtonWhiteBlackComponent onClick={() => console.log('Botão clicado!')} />
                 </nav>
             </div>

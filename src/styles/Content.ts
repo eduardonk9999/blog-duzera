@@ -9,12 +9,13 @@ export const Content = styled.article`
     margin-bottom: 2rem;
     color: #FFF;
     font-weight: 600;
-    font-size: 36px;
+    font-size: 42px;
     
    }
 
    p {
-    margin: 1rem 0 2rem 0;
+    margin: 0rem 0 2rem 0;
+    line-height: 2rem;
    }
 
    span {
@@ -37,5 +38,11 @@ export const Content = styled.article`
         padding: 5rem 2rem;
    }
    
+
+   .blogConteudo {
+        padding: 0 10rem 0px 0;
+        margin: 0;
+        text-align: left;
+    }
 
 `;
