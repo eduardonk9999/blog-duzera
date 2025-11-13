@@ -19,7 +19,7 @@ Um blog pessoal desenvolvido com Next.js, onde compartilho conhecimentos sobre t
 
 ## Como Executar o Projeto Localmente
 
-1. Clone o repositório:
+1. Clone o repositório::
 
    ```bash
    git clone https://github.com/eduardonk9999/blog-duzera.git
